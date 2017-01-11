@@ -1,17 +1,10 @@
-class SavingsAccount {
+class SavingsAccount extends Account {
 
-    private balance:number;
-    private ownerName:String;
     private withdrawals:number;
-
+    
     constructor(initialBalance:number, ownerName:String) {
-        this.balance = initialBalance;
-        this.ownerName = ownerName;
+        super(initialBalance, ownerName);
         this.withdrawals = 3;
-    }
-
-    deposit(addTo:number) {
-        this.balance = this.balance + addTo;
     }
 
     withdraw(subFrom:number) {
@@ -21,9 +14,5 @@ class SavingsAccount {
        } else {
            console.log('You have exceeded your withdrawal limits');
        }
-    }
-
-    checkBalance() {
-        console.log(`${this.ownerName}: $${this.balance}`);
     }
 }
